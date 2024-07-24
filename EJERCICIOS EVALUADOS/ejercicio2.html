@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p class="mx-6">
+        Ejercicio 2: Conversor de Temperatura
+        Crea un conversor de temperatura que solicite al usuario ingresar una temperatura en grados Celsius y lo
+        convierta
+        a grados Fahrenheit o viceversa, dependiendo de la opción seleccionada.
+
+    </p>
+    <div class="m-6">
+
+        <input type="text" id="temperatura" class="border" placeholder="temperatura a convertir">
+    </div>
+    <div class="m-6">
+        <label for="opcion" class="text-xs">Seleccione </label>
+        <select name="" id="opcion">
+
+            <option value="F">F</option>
+            <option value="C">C</option>
+
+        </select>
+    </div>
+
+    <button class="border-2 ml-6 px-5 bg-indigo-500 text-white border-black" onclick="calcular()">CONVERTIR</button>
+
+    Tu temp es: <span id="temp"></span>
+</body>
+<script>
+
+
+    const calcular = () => {
+
+
+        let temperatura = document.getElementById("temperatura").value
+
+        let opcion = document.getElementById("opcion").value
+
+        let temp = document.getElementById("temp")
+
+        let resultado = 0
+
+
+        if (temperatura == '') {
+
+            alert("datos vacios")
+            return
+        }
+
+
+
+        if (opcion == 'C') {
+
+            //Grados Fahrenheit = (grados centigrados * 1.8 ) + 32
+
+            resultado = (temperatura * 1.8) + 32
+        } else {
+
+            //Grados centígrados = (grados Fahrenheit − 32) / 1.8
+            resultado = (temperatura - 32) / 1.8
+        }
+
+
+        temp.innerHTML = resultado
+    }
+
+</script>
+
+</html>

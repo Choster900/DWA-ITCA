@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p class="mx-6">
+        Ejercicio 4: Calcular notas de un estudiante: (Nota teórica (20%) y práctica (80%)) calcule el promedio y su
+        estado
+        de aprobación si es mayor o igual a 7
+    </p>
+    <div class="m-6">
+        <input type="text" id="teoria" class="border" placeholder="NOTA TEORIA 20%" min="1">
+        <input type="text" id="practica" class="border" placeholder="NOTA PRACTICA 80%" min="1">
+    </div>
+
+
+    <button class="border-2 ml-6 px-5 bg-indigo-500 text-white border-black" onclick="calcular()">CALCULAR PROMEDIO</button>
+
+    Tu NOTA es: <span id="promedioHtml"></span>
+</body>
+<script>
+
+
+    const calcular = () => {
+
+
+        let teoria = document.getElementById("teoria").value
+        let practica = document.getElementById("practica").value
+
+        let promedioHtml = document.getElementById("promedioHtml")
+
+
+
+        let teoriaTot = 0
+        let practicaTot = 0
+        let promedio = 0
+        if (teoria == '' || practica == '') {
+
+            alert("datos vacios")
+            return
+        }
+
+
+
+
+        teoriaTot = teoria * 0.20
+        practicaTot = practica * 0.80
+
+        console.log({ teoriaTot, practicaTot });
+
+        promedio = practicaTot + teoriaTot
+
+
+        console.log(promedio);
+        promedioHtml.innerHTML = promedio.toFixed(2)
+    }
+
+</script>
+
+</html>

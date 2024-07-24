@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p class="mx-6">
+        Ejercicio 3: Suma de Números Pares
+        Solicita al usuario un número entero positivo y calcula la suma de todos los números pares desde 1 hasta el
+        número ingresado.
+    </p>
+    <div class="m-6">
+        <input type="number" id="numero" class="border" placeholder="Numero entero" min="1">
+    </div>
+
+
+    <button class="border-2 ml-6 px-5 bg-indigo-500 text-white border-black" onclick="calcular()">Sumar de numeros
+        entero</button>
+
+    SUMA DE TODOS LOS PARES: <span id="res"></span>
+</body>
+<script>
+
+
+    const calcular = () => {
+
+
+        let numero = document.getElementById("numero").value
+
+        let res = document.getElementById("res")
+
+
+
+        if (numero == '') {
+
+            alert("datos vacios")
+            return
+        }
+
+
+        let suma = 0
+        for (let index = 1; index <= numero; index++) {
+
+
+            if (index % 2 == 0) {
+                suma = suma + parseFloat(index)
+            }
+        }
+
+        res.innerHTML = suma
+    }
+
+</script>
+
+</html>

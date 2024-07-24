@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p class="mx-6">
+        Ejercicio 1: Calculadora de IMC (Índice de Masa Corporal)
+        Crea una calculadora de IMC que solicite al usuario su peso y estatura, calcule el IMC y muestre el resultado
+        con
+        un mensaje indicando si está bajo peso, peso normal, sobrepeso u obeso.
+    </p>
+    <div class="m-6">
+
+        <input type="text" id="peso" class="border" placeholder="Peso en Kilogramos">
+    </div>
+    <div class="m-6">
+        <input type="text" id="estatura" class="border" placeholder="Estatura">
+    </div>
+
+    <button class="border-2 ml-6 px-5 bg-indigo-500 text-white border-black" onclick="calcular()">CALCULAR IMC</button>
+
+    Tu IMC es: <span id="indice"></span>
+</body>
+<script>
+
+
+    const calcular = () => {
+
+
+        let peso = document.getElementById("peso").value
+        let estatura = document.getElementById("estatura").value
+
+
+        let indiceHtml = document.getElementById("indice")
+
+        let indice = 0
+
+
+        if (peso == '' || estatura == '') {
+            
+            alert("datos vacios")
+            return
+        }
+
+        console.log(peso);
+
+        indice = parseFloat(peso) / parseFloat(estatura)
+
+        console.log(indice);
+        indiceHtml.innerHTML = indice.toFixed(2)
+    }
+
+</script>
+
+</html>
