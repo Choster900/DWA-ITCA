@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Ventas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Ventas</h1>
+        <div class="sale-form">
+            <input type="text" id="product-name" placeholder="Nombre del Producto">
+            <input type="number" id="quantity" placeholder="Cantidad">
+            <input type="number" id="price" placeholder="Precio por Unidad">
+            <button id="add-sale">Agregar Venta</button>
+        </div>
+        <div class="sales-summary">
+            <h2>Resumen de Ventas</h2>
+            <ul id="sales-list"></ul>
+            <div id="total-sales"></div>
+            <div id="top-product"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
